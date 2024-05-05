@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پروژه شماره - 14</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .course-title {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 34px;
+      color: #000;
+      margin: 100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      background: url('assets/img/bg.png');
+      overflow: hidden;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      position: relative;
+      padding: 0 50px;
+    }
+
+    .icon-close {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      color: #fff;
+      opacity: 0;
+      font-size: 70px;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+    }
+
+    .icon-close:hover {
+      transform: rotate(45deg);
+    }
+
+    .search-input {
+      height: 80px;
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      opacity: 0;
+      /* transform: translate(40px,0); */
+      /* background-color: red; */
+      pointer-events: none;
+      transition: all 0.9s ease-in-out;
+    }
+
+    .search-input .input-search {
+      color: #fff;
+      font-size: 54px;
+      border: 0;
+      background: transparent;
+      outline: 0;
+      font-weight: 200;
+    }
+
+    .search-input .input-search::-webkit-input-placeholder {
+      color: #eee;
+    }
+
+    .control {
+      cursor: pointer;
+    }
+
+    .control .btn-material {
+      position: absolute;
+      top: -30px;
+      right: 60px;
+      width: 60px;
+      height: 60px;
+      background-color: #e91e63;
+      border-radius: 100%;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      transition: box-shadow .07s ease-in-out,transform .7s ease-in-out;
+    }
+
+    .control .btn-material:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .control i {
+      color: #fff;
+      position: absolute;
+      top: -9px;
+    right: 75px;
+    }
+
+    .search-active {
+      overflow: hidden;
+    }
+
+    .search-active .search-input {
+      opacity: 1;
+    }
+
+    .search-active .icon-close {
+      opacity: 1;
+      transform: rotate(-90deg);
+    }
+
+    .search-active .control {
+      cursor: default;
+    }
+
+    .search-active .control .btn-material {
+      transform: scale(70);
+    }
+
+    .search-active .control  i {
+      opacity: 0;
+    }
+    .search-active .search-input{
+      right: 70px;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="course-title">پروژه شماره 14</p>
+  <div class="container">
+    <div class="control">
+      <div class="btn-material"></div>
+        <i class="material-icons icon-material-search">search</i>
+      
+    </div>
+  </div>
+  <i class="material-icons icon-close">close</i>
+  <div class="search-input">
+    <input type="text" class="input-search" placeholder="جستجو...">
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.control').click(function(){
+      $('body').addClass('search-active');
+      $('.input-search').focus();
+    });
+$('.icon-close').click(function(){
+  $('body').removeClass('search-active');
+});
+  });
+</script>
+</body>
+
+</html>
